@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hotel</string>
+    <string name="send_verification_code">获取验证码</string>
+    <string name="create_account">创建账号</string>
+    <string name="user_rule">用户协议</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
