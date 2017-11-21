@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8EBF1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:background="@drawable/layer_list_order">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单"
+            android:textSize="17sp"
+            android:textColor="#000"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/order"
+            android:layout_width="217dp"
+            android:layout_height="217dp"
+            android:src="@drawable/pic_default_no_order"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/login_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order"
+            android:text="登录后可查询您所有的订单"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000"/>
+
+        <Button
+            android:id="@+id/jump_login"
+            android:layout_width="118dp"
+            android:layout_height="47dp"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/login_hint"
+            android:text="登录"
+            android:textColor="#3483EE"
+            android:background="@drawable/shape_immed"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

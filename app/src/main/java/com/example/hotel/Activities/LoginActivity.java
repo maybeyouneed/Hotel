@@ -1,8 +1,10 @@
-package com.example.hotel;
+package com.example.hotel.Activities;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hotel.Utils.MyAsyncTask;
+import com.example.hotel.Interfaces.HttpCallBackListener;
+import com.example.hotel.R;
+import com.example.hotel.Utils.HttpAsyncTask;
 import com.example.hotel.data.Constant;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,10 +25,47 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button btnLogin;
 
+    private HttpCallBackListener loginListener = new HttpCallBackListener() {
+        @Override
+        public void onSuccess() {
+            SharedPreferences pref = LoginActivity.this.getSharedPreferences("Login", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("isLogin", true);
+            editor.putString("account", etAccount.getText().toString().trim());
+            editor.apply();
+            LoginActivity.this.finish();
+        }
+
+        @Override
+        public void onFailed() {
+            Toast.makeText(LoginActivity.this, "登录失败，账号或密码错误！", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onError() {
+            Toast.makeText(LoginActivity.this, "登录失败，网络连接错误，请确认网络连接后重试", Toast.LENGTH_SHORT).show();
+            /*
+            SharedPreferences pref = LoginActivity.this.getSharedPreferences("Login", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("isLogin", true);
+            editor.putString("account", etAccount.getText().toString().trim());
+            editor.apply();
+            */
+            //Intent intent2 = getIntent();
+            //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            //intent.putExtra("index", intent2.getIntExtra("index", 0));
+            //startActivity(intent);
+
+            LoginActivity.this.finish();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Log.d("LoginActivity", "onCreate()");
 
         registerText = (TextView) findViewById(R.id.tv_register);
         etAccount = (EditText) findViewById(R.id.et_login_account);
@@ -54,7 +95,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(String account, String password){
-        String loginUrl = Constant.URL_Login + "?account=" + account + "&password=" + password;
-        new MyAsyncTask(this).execute(loginUrl);
+        String loginUrl = Constant.URL_Login;
+        new HttpAsyncTask(this, loginListener).execute(loginUrl, account, password);
     }
+
 }

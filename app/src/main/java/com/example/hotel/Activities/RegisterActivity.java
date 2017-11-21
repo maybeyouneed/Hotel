@@ -1,4 +1,4 @@
-package com.example.hotel;
+package com.example.hotel.Activities;
 
 
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.hotel.Utils.MyAsyncTask;
+import com.example.hotel.Interfaces.HttpCallBackListener;
+import com.example.hotel.R;
+import com.example.hotel.Utils.HttpAsyncTask;
 import com.example.hotel.data.Constant;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -18,6 +20,23 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etAccount;
     private EditText etPassword;
     private Button btnRegister;
+
+    HttpCallBackListener listener = new HttpCallBackListener() {
+        @Override
+        public void onSuccess() {
+
+        }
+
+        @Override
+        public void onFailed() {
+
+        }
+
+        @Override
+        public void onError() {
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void register(String account, String password){
         String registerUrl = Constant.URL_Register + "?account=" + account + "&password=" + password;
-        new MyAsyncTask(this).execute(registerUrl);
+        new HttpAsyncTask(this, listener).execute(registerUrl);
     }
 
 }

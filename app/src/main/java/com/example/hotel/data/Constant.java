@@ -6,9 +6,9 @@ package com.example.hotel.data;
 
 public class Constant {
 
-    public static final String URL = "http://172.23.213.1:8080/ServletTest/";
-    public static final String URL_Register = URL + "RegisterServlet";
-    public static final String URL_Login = URL + "LoginServlet";
+    public static final String URL = "http://172.23.180.1:3000/";
+    public static final String URL_Register = URL + "register";
+    public static final String URL_Login = URL + "login";
 
 
 

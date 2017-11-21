@@ -1,50 +1,49 @@
-package com.example.hotel;
+package com.example.hotel.Fragments;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 
 import com.example.hotel.Adapter.CityAdapter;
 import com.example.hotel.Adapter.HotelAdapter;
+import com.example.hotel.R;
 import com.example.hotel.data.HotCity;
 import com.example.hotel.data.Hotel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+/**
+ * 推荐页面
+ */
+
+public class Fragment1 extends Fragment {
 
     private List<HotCity> cityList = new ArrayList<>();
     private List<Hotel> selectionList = new ArrayList<>();
-    RecyclerView recyclerView;
-    RecyclerView recyclerView2;
-    SearchView searchView;
-    Button login;
+    private View view;
+    private RecyclerView recyclerView;
+    private RecyclerView recyclerView2;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initViews();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_home1, container, false);
         initList();
+        initViews();
+        return view;
     }
 
     private void initViews(){
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view2);
-        searchView = (SearchView) findViewById(R.id.search_view);
-        login = (Button)findViewById(R.id.jump_login);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView2 = (RecyclerView) view.findViewById(R.id.recycler_view2);
 
-        login.setOnClickListener(this);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         layoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -54,24 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setAdapter(cityAdapter);
         recyclerView2.setAdapter(hotelAdapter);
 
-        SearchView.SearchAutoComplete textView = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
-        searchView.setQueryHint("搜索城市、区域、楼宇、商圈");
-        //searchView.onActionViewExpanded();
-        textView.setHint("搜索城市、区域、楼宇、商圈");
-        textView.setHintTextColor(Color.parseColor("#80ababab"));
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.jump_login:
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
 
-    private void initList(){
+    private void initList() {
         HotCity hangzhou = new HotCity("杭州", R.drawable.hangzhou);
         cityList.add(hangzhou);
         HotCity chongqing = new HotCity("重庆", R.drawable.chongqing);
@@ -90,4 +75,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Hotel hotel4 = new Hotel("4号房间", R.drawable.hotel4);
         selectionList.add(hotel4);
     }
+
 }

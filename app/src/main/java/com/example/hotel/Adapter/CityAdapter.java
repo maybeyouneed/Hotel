@@ -1,7 +1,6 @@
 package com.example.hotel.Adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,13 +25,11 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        CardView cardView;
         ImageView cityImage;
         TextView cityName;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            cardView = (CardView) itemView;
             cityImage = (ImageView) itemView.findViewById(R.id.city_image);
             cityName = (TextView) itemView.findViewById(R.id.city_name);
         }
