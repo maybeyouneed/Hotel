@@ -1,6 +1,7 @@
 package com.example.hotel.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.hotel.Activities.RoomInfoActivity;
 import com.example.hotel.R;
 import com.example.hotel.data.Hotel;
 
@@ -51,9 +53,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Hotel hotel = mHotelList.get(position);
+        final Hotel hotel = mHotelList.get(position);
         holder.hotelName.setText(hotel.getName());
         Glide.with(mContext).load(hotel.getImageId()).into(holder.hotelImage);
+        holder.hotelImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, RoomInfoActivity.class);
+                intent.putExtra("hotelName",hotel.getName());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
 
