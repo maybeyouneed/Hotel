@@ -47,7 +47,8 @@
             android:gravity="center"
             android:layout_below="@id/img_profile_pic"
             android:layout_marginTop="10dp"
-            android:textColor="#fff"/>
+            android:textColor="#fff"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -118,7 +119,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -143,7 +143,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -172,7 +171,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -197,7 +195,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -226,7 +223,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -252,11 +248,9 @@
                 android:layout_width="match_parent"
                 android:background="#e8ebf1" />
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:orientation="horizontal"
                 android:background="@drawable/relative_bg_selector"
                 android:clickable="true">
 
@@ -275,6 +269,25 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/ic_arrow_right_grey"/>
+            </RelativeLayout>
+
+            <!-- 退出登录 -->
+            <RelativeLayout
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/relative_bg_selector"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退出登录"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000"/>
+
             </RelativeLayout>
 
         </LinearLayout>

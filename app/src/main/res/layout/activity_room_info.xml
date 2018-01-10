@@ -71,11 +71,19 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tv_new_price"
+                    android:id="@+id/tv_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="288/晚"
+                    android:textColor="#ec0f38"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="/晚"
                     android:textColor="#ec0f38"
                     android:textSize="21sp"
                     android:textStyle="bold" />
@@ -98,7 +106,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_centerHorizontal="true"/>
-
+                <!-- 房间信息 -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -124,12 +132,11 @@
                         android:textColor="#000"
                         android:layout_toRightOf="@+id/ic_room"
                         android:layout_alignBottom="@+id/ic_room"/>
-
+                    <!-- 房号 -->
                     <TextView
-                        android:id="@+id/tv_area"
+                        android:id="@+id/tv_room_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="面积：30.0平米"
                         android:textSize="11sp"
                         android:layout_below="@+id/ic_room"
                         android:layout_marginTop="10dp"
@@ -142,18 +149,19 @@
                         android:layout_height="wrap_content"
                         android:text="户型：1卧室1卫"
                         android:textSize="11sp"
-                        android:layout_below="@+id/tv_area"
+                        android:layout_below="@id/tv_room_number"
                         android:layout_marginLeft="25dp"/>
 
                 </RelativeLayout>
-
+                <!-- 房间位置 -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@+id/strut"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp">
 
                     <ImageView
                         android:id="@+id/ic_location"
@@ -183,11 +191,11 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="25dp"/>
-
+                    <!-- 地址 -->
                     <TextView
+                        android:id="@+id/tv_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="房号：梨园天际13楼A1318"
                         android:textSize="11sp"
                         android:layout_below="@+id/tv_floor"
                         android:layout_marginLeft="25dp"/>
@@ -244,7 +252,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@+id/strut"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="15dp">
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="5dp">
 
                     <ImageView
                         android:id="@+id/ic_bed"
@@ -257,7 +266,7 @@
                         android:id="@+id/tv_bed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="房间位置"
+                        android:text="床位数量"
                         android:textSize="13sp"
                         android:textColor="#000"
                         android:layout_toRightOf="@+id/ic_bed"
@@ -267,7 +276,7 @@
                         android:id="@+id/tv_bed_area"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="楼层：13楼"
+                        android:text="精致大床"
                         android:textSize="11sp"
                         android:layout_below="@+id/ic_bed"
                         android:layout_marginTop="10dp"

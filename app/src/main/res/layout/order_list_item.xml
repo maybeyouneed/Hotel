@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8EBF1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/order_name"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:text="朝阳梨园天际店-现代房A1318号"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8EBF1"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:orientation="horizontal"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/order_image"
+            android:layout_width="130dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/hotel1"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/order_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="12月08日-12月09日"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/order_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/order_time"
+                android:layout_marginTop="6dp"
+                android:text="13楼A1318号"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/order_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                android:text="金额：￥150"
+                android:textColor="#000"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

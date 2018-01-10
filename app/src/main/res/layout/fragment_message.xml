@@ -35,28 +35,28 @@
         android:layout_centerInParent="true">
 
         <ImageView
-            android:id="@+id/order"
+            android:id="@+id/message"
             android:layout_width="217dp"
             android:layout_height="217dp"
             android:src="@drawable/pic_default_no_message"
             android:layout_centerHorizontal="true"/>
 
         <TextView
-            android:id="@+id/login_hint"
+            android:id="@+id/message_login_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/order"
+            android:layout_below="@+id/message"
             android:text="登录后才能查看您的消息哦"
             android:layout_centerHorizontal="true"
             android:textColor="#000"/>
 
         <Button
-            android:id="@+id/jump_login"
+            android:id="@+id/message_jump_login"
             android:layout_width="118dp"
             android:layout_height="47dp"
             android:layout_margin="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/login_hint"
+            android:layout_below="@+id/message_login_hint"
             android:text="登录"
             android:textColor="#3483EE"
             android:background="@drawable/shape_immed"/>

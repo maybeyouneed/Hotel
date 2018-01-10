@@ -168,6 +168,7 @@
                     android:textColor="#000"/>
 
                 <EditText
+                    android:id="@+id/et_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -250,13 +251,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
-                    android:text="订单总额"
+                    android:text="每晚金额"
                     android:textColor="#000"/>
 
                 <TextView
-                    android:id="@+id/money_sum"
+                    android:id="@+id/unit_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textColor="#000"/>
@@ -278,16 +280,17 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
-                    android:text="应付金额"
+                    android:text="订单总额"
                     android:textColor="#000"/>
 
                 <TextView
-                    android:id="@+id/money"
+                    android:id="@+id/total_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="@color/colorPrimary"/>
+                    android:textColor="#000"/>
 
             </RelativeLayout>
 

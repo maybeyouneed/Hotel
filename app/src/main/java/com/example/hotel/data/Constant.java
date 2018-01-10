@@ -6,10 +6,10 @@ package com.example.hotel.data;
 
 public class Constant {
 
-    public static final String URL = "http://172.23.180.1:3000/";
+    public static final String URL = "http://185.207.177.173:3000/";
     public static final String URL_Register = URL + "register";
     public static final String URL_Login = URL + "login";
-
+    public static final String URL_IMG = URL + "img/rooms/";
 
 
 }

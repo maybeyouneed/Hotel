@@ -1,24 +1,41 @@
 package com.example.hotel.data;
 
 /**
- * 酒店信息的数据类
+ * Hotel类的副本，测试用
  */
 
 public class Hotel {
-    private String name;
-    private int imageId;
+    private String hotelName;
+    private String imageUrl;
+    private String number;
 
-    public Hotel(String name, int imageId) {
-        this.name = name;
-        this.imageId = imageId;
+    public Hotel(String hotelName, String imageUrl, String number) {
+        this.hotelName = hotelName;
+        this.imageUrl = imageUrl;
+        this.number = number;
     }
 
-    public String getName() {
-        return name;
+    public String getHotelName() {
+        return hotelName;
     }
 
-    public int getImageId() {
-        return imageId;
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 }
